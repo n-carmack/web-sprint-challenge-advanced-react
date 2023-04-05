@@ -13,11 +13,16 @@ const initialState = {
   steps: initialSteps,
 }
 
+const currentIndex = initialIndex;
+const currentSteps = initialSteps;
+const X = 2;
+const Y = 2;
 export default class AppClass extends React.Component {
   // THE FOLLOWING HELPERS ARE JUST RECOMMENDATIONS.
   // You can delete them and build your own logic from scratch.
 
   getXY = () => {
+
     // It it not necessary to have a state to track the coordinates.
     // It's enough to know what index the "B" is at, to be able to calculate them.
   }
@@ -29,6 +34,7 @@ export default class AppClass extends React.Component {
   }
 
   reset = () => {
+    this.setState
     // Use this helper to reset all states to their initial values.
   }
 
