@@ -34,7 +34,7 @@ export default function AppFunctional(props) {
   
   
   function getXY() {
-    return (`(${x},${y})`);    
+    return (`(${this.state.x},${this.state.y})`);    
   }
 
   function getXYMessage() {
@@ -51,6 +51,8 @@ export default function AppFunctional(props) {
 
     setCurrentMessage(initialMessage);
     setCurrentSteps(0);
+
+    setFormValue('')
     // Use this helper to reset all states to their initial values.
   }
 
@@ -148,8 +150,8 @@ export default function AppFunctional(props) {
   return (
     <div id="wrapper" className={props.className}>
       <div className="info">
-        <h3 id="coordinates">{getXYMessage()}</h3>
-        <h3 id="steps">You moved {currentSteps} {currentSteps === 1 ? 'time' : 'times'}</h3>
+        <h3 id="coordinates">{`Coordinates (${x},${y})`}</h3>
+        <h3 id="steps">{`You moved ${currentSteps} ${currentSteps === 1 ? 'time' : 'times'}`}</h3>
       </div>
       <div id="grid">
         {
@@ -171,7 +173,7 @@ export default function AppFunctional(props) {
         <button id="reset" onClick={(e) =>reset()}>reset</button>
       </div>
       <form onSubmit={(e) => onSubmit(e)}>
-        <input id="email" type="email" placeholder="type email" value={formValue} onChange={(e) => onChange(e)}></input>
+        <input id="email" type="text" placeholder="type email" value={formValue} onChange={(e) => onChange(e)}></input>
         <input id="submit" type="submit"></input>
       </form>
     </div>
